@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> {%block title%}Otaku website{%endblock%} </title>
+        <link rel="stylesheet" href="{{url_for('static', filename='Stylesheet/style.css')}}">
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <h1 class="hedo">Otaku</h1>
+                <div class="item">
+                    <a class="hovro" href="{{url_for('home')}}"><b>Home</b></a>
+                    <a class="hovro" href="{{url_for('anime')}}"><b>Anime</b></a>
+                    <a class="hovro" href="{{url_for('manga')}}"><b>Manga</b></a>
+                    <a class="hovro" href="{{url_for('support')}}"><b>Support</b></a>
+                </div>
+            </div>
+        </header>
+        <div class="image">
+            <main class="curve">
+                {%block content%}
+                <div class="tit">
+                    <p>🔥 DISCOVER &#x25CF; EXPLORE &#x25CF; ENJOY</p>
+                    <h2>A WORLD OF <span style="color: #FF9900;">ANIME</span></h2>
+                    <h2>AWAITS YOU</h2>
+                    <p class="nono">Explore top anime, manga and more. Find your next favorite story.</p>
+                </div>
+                <div class="trending">
+                    <p>Trending Now</p>
+                    <a href="{{url_for('anime')}}" style="color: #FF9900; font-size: 18px;">See all →</a>
+                </div>
+                <div class="container">
+                    <a href="https://anilist.co/anime/16498/Shingeki-no-Kyojin" class="box" id="box1"><p>Attack On Titan</p></a>
+                    <a href="https://anilist.co/anime/113415/Jujutsu-Kaisen" class="box" id="box2"><p>Jujutsu Kaisen</p></a>
+                    <a href="https://anilist.co/anime/21/ONE-PIECE" class="box" id="box3"><p>One Piece</p></a>
+                    <a href="https://anilist.co/anime/101922/Kimetsu-no-Yaiba" class="box" id="box4"><p>Demon Slayer</p></a>
+                    <a href="https://anilist.co/anime/20/NARUTO" class="box" id="box5"><p>Naruto</p></a>
+                    <a href="https://anilist.co/anime/151807/Ore-dake-Level-Up-na-Ken" class="box" id="box6"><p>Solo Leveling</p></a>
+                </div>
+                <div class="Explore">
+                    <p>Explore by Genre</p>
+                </div>
+                <div class="geno">
+                    <a href="{{url_for('master')}}" class="genre"><p>😎 Masterpiece</p></a>
+                    <a href="" class="genre"><p>🧭 Adventure</p></a>
+                    <a href="" class="genre"><p>⚔️ Action</p></a>
+                    <a href="" class="genre"><p>❤️ Romance</p></a>
+                    <a href="" class="genre"><p>✨ Fantasy</p></a>
+                </div>
+                <div class="pop">
+                    <p>Popular This Month</p>
+                    <a href="{{url_for('master')}}" style="color: #FF9900; font-size: 18px;">See all →</a>
+                </div>
+                <div class="container">
+                    <a href="https://anilist.co/anime/127230/Chainsaw-Man" class="box" id="boc1"><p>Chainsaw Man</p></a>
+                    <a href="https://anilist.co/anime/120120/Tokyo-Revengers" class="box" id="boc2"><p>Tokyo Revengers</p></a>
+                    <a href="https://anilist.co/anime/269/BLEACH" class="box" id="boc3"><p>Bleach</p></a>
+                    <a href="https://anilist.co/anime/1535/DEATH-NOTE" class="box" id="boc4"><p>Death Note</p></a>
+                    <a href="https://anilist.co/manga/30642/Vinland-Saga" class="box" id="boc5"><p>Vinland Saga</p></a>
+                    <a href="https://anilist.co/anime/21519/Kimi-no-Na-wa" class="box" id="boc6"><p>Your Name</p></a>
+                </div>
+                {%endblock%}
+            </main>
+            <footer>
+                <div>
+                    <div class="futt">
+                        <p style="color: #FF9900; font-size: 30px; margin-bottom: 10px;">Otaku</p>
+                    </div>
+                    <div>
+                        <p>Discover Stories. Explore Worlds.</p>
+                    </div>
+                </div>
+                <div class="foot">
+                    <a href="{{url_for('home')}}">Home</a>
+                    <a href="{{url_for('anime')}}">Anime</a>
+                    <a href="{{url_for('manga')}}">Manga</a>
+                    <a href="{{url_for('support')}}">Support</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='Javascript/script.js') }}"></script>
+</html>

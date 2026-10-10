@@ -1,0 +1,585 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.item {
+    display: flex;
+    gap: 30px;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 0;
+    padding-right: 0;
+}
+
+.hedo{
+    border: 1px solid #FF9900;
+    border-radius: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 7px;
+}
+
+.hovro:hover{
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+}
+
+.image {
+    height: 580px;
+    width: 100%;
+    background-image: url("../Pictures/Main\ home.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding-top: 480px;
+}
+
+.curve{
+    background-color: black;
+    height: auto;
+    width: 100%;
+    border: 8px solid orange;
+    border-radius: 51%/100px 100px 0 0;
+    box-sizing: border-box;
+    padding: 60px;
+    border-bottom: none;
+}
+
+.tit{
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.tit p{
+    margin: 5px;
+}
+
+.tit h2{
+    margin: 5px;
+    font-size:38px;
+}
+
+.trending{
+    margin-top: 40px;
+    text-indent: 8px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-left: 5px solid #FF9900;
+}
+
+.trending p{
+    font-size: 25px;
+}
+
+.container{
+    height: 300px;
+    width: 100%;
+    padding: 40px 0 40px 7px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    gap: 10px;
+}
+
+.box{
+    display: block;
+    height: 100%;
+    width: 15.8%;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.box p{
+    height: 100%;
+    width: 100%;
+    color: #FF9900;
+    text-indent: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 7%;
+    box-sizing: border-box;
+    font-weight: bolder;
+}
+
+#box1{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Attack\ on\ titan\ poster.jpg");
+    background-size: cover;
+}
+
+#box2{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Jujutsu\ kaisen\ poster.jpg");
+    background-size: cover;
+}
+
+#box3{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/One\ piece\ poster.jpg");
+    background-size: cover;
+}
+
+#box4{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Demon\ slayer\ poster.jpg");
+    background-size: cover;
+}
+
+#box5{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Naruto\ poster.jpg");
+    background-size: cover;
+}
+
+#box6{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Solo\ leveling\ poster.jpg");
+    background-size: cover;
+}
+
+.geno{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    height: 130px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 60px 0 60px;
+    box-sizing: border-box;
+}
+
+.genre{
+    background-color: darkred;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid aliceblue;
+    border-radius: 20px;
+    font-size: larger;
+}
+
+.Explore{
+    border-left: 5px solid #FF9900;
+    background-color: black;
+    text-indent: 8px;
+    font-size: 25px;
+    margin-top: 8px;
+}
+
+.pop{
+    border-left: 5px solid #FF9900;
+    text-indent: 8px;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    color: #FF9900;
+}
+
+#boc1{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Chainsaw\ man.jpg");
+    background-size: cover;
+}
+
+#boc2{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Tokyo\ revengers.jpg");
+    background-size: cover;
+}
+
+#boc3{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Bleach.jpg");
+    background-size: cover;
+}
+
+#boc4{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Death\ note.jpg");
+    background-size: cover;
+}
+
+#boc5{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Vinland\ saga.jpg");
+    background-size: cover;
+}
+
+#boc6{
+    background-image: linear-gradient(to bottom, transparent 50%, black 100%), url("../Pictures/Your\ name.jpg");
+    background-size: cover;
+}
+
+footer{
+    height: 240%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, black 20%, transparent 100%), url("../Pictures/luffy.png");
+    background-size: cover;
+    border: 8px solid orange;
+    border-top: none;
+    box-sizing: border-box;
+    padding: 40px 90px 30px 90px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foot{
+    width: 50%;
+    font-weight: bolder;
+    display: flex;
+    justify-content: end;
+    box-sizing: border-box;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.futt{
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Anime.html css starts here */
+
+.Ano{
+    padding: 10px 40px 8px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.cont{
+    height: auto;
+    width: 100%;
+    padding: 40px 0 40px 0;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    box-sizing: border-box;
+}
+
+.xbox{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 180px;
+    height: 300px;
+    border: 1px solid aliceblue;
+    border-radius: 20px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.xbox p{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 14px;
+    padding-bottom: 10px;
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUT — added for mobile, tablet and desktop
+   ========================================================= */
+
+html {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Medium screens: laptops and tablets */
+@media (max-width: 1024px) {
+    .curve {
+        padding: 45px 30px;
+        border-radius: 42% / 75px 75px 0 0;
+    }
+
+    .tit {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .container {
+        height: 260px;
+        padding: 25px 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .box {
+        flex: 0 0 180px;
+    }
+
+    .geno {
+        height: auto;
+        padding: 24px;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .genre {
+        width: auto;
+        min-width: 150px;
+        padding: 0 16px;
+    }
+
+    .cont {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        padding: 25px 12px;
+        gap: 14px;
+    }
+
+    .xbox {
+        width: auto;
+        min-width: 0;
+        margin: 0;
+        justify-self: center;
+        width: min(100%, 180px);
+    }
+
+    footer {
+        padding: 35px 40px;
+        gap: 24px;
+    }
+
+    .foot {
+        gap: 22px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Phones and narrow screens */
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        min-height: 64px;
+        padding: 12px 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .hedo {
+        font-size: 22px;
+        padding: 5px 8px;
+    }
+
+    .item {
+        margin: 0;
+        padding: 0;
+        gap: 12px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .image {
+        height: auto;
+        min-height: 300px;
+        padding-top: 180px;
+        background-position: center top;
+    }
+
+    .curve {
+        padding: 28px 14px;
+        border-width: 4px;
+        border-radius: 35px 35px 0 0;
+    }
+
+    .tit {
+        padding: 20px 6px 10px;
+    }
+
+    .tit h2 {
+        font-size: clamp(24px, 7vw, 32px);
+        line-height: 1.2;
+    }
+
+    .tit p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .nono {
+        max-width: 100%;
+    }
+
+    .trending,
+    .pop {
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+    }
+
+    .trending p,
+    .pop p,
+    .Explore {
+        font-size: 20px;
+    }
+
+    .trending a,
+    .pop a {
+        font-size: 14px !important;
+        white-space: nowrap;
+    }
+
+    .container {
+        height: 230px;
+        width: 100%;
+        padding: 22px 2px;
+        gap: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x proximity;
+    }
+
+    .box {
+        flex: 0 0 145px;
+        width: 145px;
+        border-radius: 15px;
+        scroll-snap-align: start;
+    }
+
+    .box p {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .geno {
+        padding: 20px 0;
+        gap: 10px;
+    }
+
+    .genre {
+        min-width: 0;
+        width: calc(50% - 8px);
+        min-height: 42px;
+        height: auto;
+        padding: 9px 8px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .cont {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 22px 10px;
+    }
+
+    .xbox {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 5;
+        margin: 0;
+        border-radius: 14px;
+    }
+
+    .xbox p {
+        padding: 0 9px 9px;
+        overflow-wrap: anywhere;
+        font-size: 13px;
+    }
+
+    .Ano {
+        padding: 14px 12px 8px;
+        text-align: center;
+    }
+
+    footer {
+        min-height: 220px;
+        height: auto;
+        padding: 28px 18px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 22px;
+        border-width: 4px;
+        background-position: center;
+    }
+
+    footer > div,
+    .futt,
+    .foot {
+        width: 100%;
+    }
+
+    .foot {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        font-size: 14px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .item {
+        justify-content: center;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .curve {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .cont {
+        gap: 8px;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .xbox p {
+        font-size: 12px;
+    }
+
+    .box {
+        flex-basis: 130px;
+        width: 130px;
+    }
+}
+
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}

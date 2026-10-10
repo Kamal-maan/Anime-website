@@ -3,6 +3,7 @@ import requests;
 import json;
 import time;
 from pathlib import Path
+from flask import Response
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -110,5 +111,12 @@ def master():
     uno = animo()
     return render_template("Masterpiece.html", anime_list=uno)
 
-if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True)
+@app.route("/sitemap.xml")
+def sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://anime-website-xs5o.onrender.com/</loc>
+        </url>
+    </urlset>"""
+    return Response(xml, mimetype="application/xml")

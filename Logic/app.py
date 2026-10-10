@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, url_for, session, Response;
-import mysql.connector;
 import requests;
 import json;
 import time;
@@ -82,14 +81,6 @@ def animo():
         anime_lo.extend(anime)
 
     return anime_lo
-
-def con():
-    return mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='Kamal_oo6',
-    database='Otaku'
-)
 
 @app.route("/")
 def home():

@@ -2,9 +2,15 @@ from flask import Flask, render_template, redirect, url_for, session, Response;
 import requests;
 import json;
 import time;
+from pathlib import Path
 
-app = Flask(__name__, template_folder="../Templates", static_folder="../Static")
-app.secret_key = "Maan"
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+app = Flask(
+    __name__,
+    template_folder=str(BASE_DIR / "Templates"),
+    static_folder=str(BASE_DIR / "Static")
+)
 
 def exp():
     url = "https://graphql.anilist.co"
@@ -47,7 +53,7 @@ def animo():
 
     anime_lo = []
 
-    with open("../Data/anime.json", "r", encoding="utf-8")as file:
+    with open(BASE_DIR / "Data" / "anime.json", "r", encoding="utf-8") as File:
         titles = json.load(file)
 
     for title in titles:

@@ -54,7 +54,7 @@ def animo():
     anime_lo = []
 
     with open(BASE_DIR / "Data" / "anime.json", "r", encoding="utf-8") as File:
-        titles = json.load(file)
+        titles = json.load(File)
 
     for title in titles:
         query = f"""

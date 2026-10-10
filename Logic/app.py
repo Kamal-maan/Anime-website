@@ -114,9 +114,21 @@ def master():
 @app.route("/sitemap.xml")
 def sitemap():
     xml = """<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        <url>
-            <loc>https://anime-website-xs5o.onrender.com/</loc>
-        </url>
-    </urlset>"""
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://anime-website-xs5o.onrender.com/</loc>
+    </url>
+    <url>
+        <loc>https://anime-website-xs5o.onrender.com/anime</loc>
+    </url>
+    <url>
+        <loc>https://anime-website-xs5o.onrender.com/manga</loc>
+    </url>
+    <url>
+        <loc>https://anime-website-xs5o.onrender.com/masterpiece</loc>
+    </url>
+    <url>
+        <loc>https://anime-website-xs5o.onrender.com/support</loc>
+    </url>
+</urlset>"""
     return Response(xml, mimetype="application/xml")

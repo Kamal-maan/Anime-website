@@ -3,7 +3,6 @@ import requests;
 import json;
 import time;
 from pathlib import Path
-from flask import Response
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -131,4 +130,4 @@ def sitemap():
         <loc>https://anime-website-xs5o.onrender.com/support</loc>
     </url>
 </urlset>"""
-    return Response(xml, mimetype="application/xml")
+    return Response(xml, content_type="text/xml; charset=utf-8")

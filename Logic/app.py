@@ -2,7 +2,8 @@ from flask import Flask, render_template, redirect, url_for, session, Response;
 import requests;
 import json;
 import time;
-from pathlib import Path
+from pathlib import Path;
+from livereload import Server;
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,80 +14,67 @@ app = Flask(
 )
 
 def exp():
-    url = "https://graphql.anilist.co"
+    Url = "https://www.animedubhindi.link/wp-json/wp/v2/posts"
 
-    i = 1
-    anime_list=[]
+    anime_li = []
 
-    while i < 3:
-        query = f"""
-        query {{
-            Page(page:{i}, perPage:100){{
-                media(type: ANIME){{
-                    siteUrl
-                    title{{
-                        english
-                        romaji
-                    }}
-                    episodes
-                    coverImage{{
-                        large
-                    }}
-                }}
-            }}
-        }}
-        """
-        i+= 1
+    with requests.Session() as session:
+        for page in range (1,3):
+            params = {
+                "per_page": 20,
+                "page": page,
+                "_embed": "true"
+            }
 
-        response = requests.post(
-        url, json={"query": query},
-        timeout=15
-        )
-        response.raise_for_status()
-        anime = response.json()["data"]["Page"]["media"]
-        anime_list.extend(anime)
+            response = session.get( Url,
+                params=params, timeout=15
+            )
 
-    return anime_list
+            posts = response.json()
+            response.raise_for_status()
+
+            for post in posts:
+                Title = post.get("title", {}).get("rendered")
+                link = post.get("link")
+                media = post.get("_embedded", {}).get("wp:featuredmedia", [])
+                cover = media[0].get("source_url") if media else None
+
+                anime_li.append({"Title":Title, "Link":link, "Cover":cover})
+
+    return anime_li 
+        
 
 def animo():
-    url = "https://graphql.anilist.co"
+    Url = "https://www.animedubhindi.link/wp-json/wp/v2/posts"
 
     anime_lo = []
 
-    with open(BASE_DIR / "Data" / "anime.json", "r", encoding="utf-8") as File:
-        titles = json.load(File)
+    with open(BASE_DIR / "Data" / "anime.json", "r", encoding="utf-8") as file:
+        name = json.load(file)
 
-    for title in titles:
-        query = f"""
-        query{{
-            Page{{
-                media(search: "{title}", type: ANIME){{
-                            siteUrl
-                            title{{
-                            english
-                            romaji
-                            }}
-                            coverImage{{
-                            large
-                            }}
-                            episodes
-                }}
-            }}
-        }}
-        """
+    with requests.Session() as sussion:
+        for title in name:
+            print(title)
 
-        time.sleep(1)
+            params={
+                "search": title,
+                "_embed": "true"
+            }
 
-        response = requests.post(
-            url, json={"query": query},
-            timeout=15
-        )
+            response = sussion.get(Url,
+                params=params
+            )
 
-        response.raise_for_status()
-        anime = response.json()["data"]["Page"]["media"]
-        anime_lo.extend(anime)
+            posts = response.json()
 
-    return anime_lo
+            for post in posts:
+                Title = post["title"]["rendered"]
+                coverImage = post["_embedded"]["wp:featuredmedia"][0]["source_url"]
+                link = post["link"]
+
+                anime_lo.append({"Title": Title, "Cover": coverImage, "Link": link})
+
+        return anime_lo
 
 @app.route("/")
 def home():
@@ -110,24 +98,12 @@ def master():
     uno = animo()
     return render_template("Masterpiece.html", anime_list=uno)
 
-@app.route("/sitemap.xml")
-def sitemap():
-    xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://anime-website-xs5o.onrender.com/</loc>
-    </url>
-    <url>
-        <loc>https://anime-website-xs5o.onrender.com/anime</loc>
-    </url>
-    <url>
-        <loc>https://anime-website-xs5o.onrender.com/manga</loc>
-    </url>
-    <url>
-        <loc>https://anime-website-xs5o.onrender.com/masterpiece</loc>
-    </url>
-    <url>
-        <loc>https://anime-website-xs5o.onrender.com/support</loc>
-    </url>
-</urlset>"""
-    return Response(xml, content_type="text/xml; charset=utf-8")
+if __name__ == "__main__":
+    server = Server(app)
+    server.watch("templates/")
+    server.watch("static/")
+    server.serve(
+        host="127.0.0.1",
+        port=5500,
+        debug=True
+    )

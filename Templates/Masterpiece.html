@@ -6,8 +6,8 @@
     <div class="Ano"><h2>Lets Explore</h2></div>
     <hr>
     <div class="cont">
-        {%for anime in anime_list%}
-        <a href="{{anime.siteUrl}}" class="xbox" style="background-image: linear-gradient(to bottom, transparent 40%, black 100%), url('{{anime.coverImage.large}}');"><p>{{anime.title.english}}</p><p> {{anime.episodes}} </p></a>
+        {%for item in anime_list%}
+        <a href="{{item.Link}}" class="xbox" style="background-image: linear-gradient(to bottom, transparent 40%, black 100%), url('{{item.Cover}}');"><p>{{item.Title}}</p><p> {{item.genres}} </p></a>
         {%endfor%}
     </div>
 {%endblock%}

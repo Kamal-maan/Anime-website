@@ -3,7 +3,6 @@ import requests;
 import json;
 import time;
 from pathlib import Path;
-from livereload import Server;
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 

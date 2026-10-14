@@ -97,13 +97,3 @@ def support():
 def master():
     uno = animo()
     return render_template("Masterpiece.html", anime_list=uno)
-
-if __name__ == "__main__":
-    server = Server(app)
-    server.watch("templates/")
-    server.watch("static/")
-    server.serve(
-        host="127.0.0.1",
-        port=5500,
-        debug=True
-    )

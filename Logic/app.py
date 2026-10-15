@@ -29,7 +29,7 @@ def exp():
                 params=params, timeout=20
             )
 
-            time.sleep=2
+            time.sleep(2)
 
             posts = response.json()
             response.raise_for_status()

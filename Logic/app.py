@@ -26,7 +26,7 @@ def exp():
             }
 
             response = session.get( Url,
-                params=params, timeout=15
+                params=params, timeout=20
             )
 
             time.sleep=2
@@ -63,10 +63,10 @@ def animo():
             }
 
             response = sussion.get(Url,
-                params=params
+                params=params, timeout=20
             )
 
-            time.sleep=2
+            time.sleep(2)
 
             posts = response.json()
 

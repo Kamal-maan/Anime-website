@@ -29,6 +29,8 @@ def exp():
                 params=params, timeout=15
             )
 
+            time.sleep=2
+
             posts = response.json()
             response.raise_for_status()
 
@@ -63,6 +65,8 @@ def animo():
             response = sussion.get(Url,
                 params=params
             )
+
+            time.sleep=2
 
             posts = response.json()
 
